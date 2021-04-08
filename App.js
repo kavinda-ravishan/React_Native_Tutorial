@@ -5,7 +5,7 @@ import {
   Text,
   View,
   Image,
-  TouchableHighlight,
+  TouchableNativeFeedback,
 } from "react-native";
 
 //solve SafeAreaView apple top notch problem
@@ -18,17 +18,11 @@ export default function App() {
       <Text style={styles.text}>
         Open up App.js to start working on your app!
       </Text>
-      <TouchableHighlight onPress={() => console.log("Image pressed")}>
-        <Image
-          blurRadius={1}
-          fadeDuration={2000}
-          source={{
-            width: 200,
-            height: 300,
-            uri: "https://picsum.photos/id/237/200/300",
-          }}
-        />
-      </TouchableHighlight>
+      <TouchableNativeFeedback onPress={() => console.log("Image pressed")}>
+        <View
+          style={{ width: 200, height: 200, backgroundColor: "green" }}
+        ></View>
+      </TouchableNativeFeedback>
       <StatusBar style="auto" />
     </View>
   );
