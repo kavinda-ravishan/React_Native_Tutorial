@@ -1,12 +1,6 @@
 import { StatusBar } from "expo-status-bar";
 import React from "react";
-import {
-  StyleSheet,
-  Text,
-  View,
-  Image,
-  TouchableWithoutFeedback,
-} from "react-native";
+import { StyleSheet, Text, View, Image, TouchableOpacity } from "react-native";
 
 //solve SafeAreaView apple top notch problem
 //<Image source={require("./assets/icon.png")} />
@@ -18,7 +12,7 @@ export default function App() {
       <Text style={styles.text}>
         Open up App.js to start working on your app!
       </Text>
-      <TouchableWithoutFeedback onPress={() => console.log("Image pressed")}>
+      <TouchableOpacity onPress={() => console.log("Image pressed")}>
         <Image
           blurRadius={11}
           fadeDuration={2000}
@@ -28,7 +22,7 @@ export default function App() {
             uri: "https://picsum.photos/id/237/200/300",
           }}
         />
-      </TouchableWithoutFeedback>
+      </TouchableOpacity>
       <StatusBar style="auto" />
     </View>
   );
