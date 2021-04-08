@@ -1,6 +1,6 @@
 import { StatusBar } from "expo-status-bar";
 import React from "react";
-import { StyleSheet, View, Button, Alert } from "react-native";
+import { StyleSheet, View, Text } from "react-native";
 
 //solve SafeAreaView apple top notch problem
 //<Image source={require("./assets/icon.png")} />
@@ -8,18 +8,17 @@ import { StyleSheet, View, Button, Alert } from "react-native";
 //TouchableWithoutFeedback : Make image Touchable
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Button
-        title="Click Me"
-        onPress={() =>
-          Alert.prompt("My title", "my message", (text) => console.log(text))
-        }
-        color="orange"
-      />
+    <View style={[styles.container, backgroundStyle]}>
+      <Text style={{ color: "red" }}>Inline Style</Text>
+      <Text style={textStyle}>Pass style as object</Text>
     </View>
   );
 }
 
+const textStyle = { color: "green" };
+const backgroundStyle = { backgroundColor: "orange" };
+
+//StyleSheet.create validate props we pass Recomend to use
 const styles = StyleSheet.create({
   container: {
     flex: 1,
