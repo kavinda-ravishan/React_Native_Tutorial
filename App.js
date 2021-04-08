@@ -1,14 +1,6 @@
 import { StatusBar } from "expo-status-bar";
 import React from "react";
-import {
-  StyleSheet,
-  Text,
-  View,
-  Image,
-  TouchableNativeFeedback,
-  Button,
-  Alert,
-} from "react-native";
+import { StyleSheet, View, Button, Alert } from "react-native";
 
 //solve SafeAreaView apple top notch problem
 //<Image source={require("./assets/icon.png")} />
@@ -20,20 +12,7 @@ export default function App() {
       <Button
         title="Click Me"
         onPress={() =>
-          Alert.alert("My title", "My message", [
-            {
-              text: "Yes",
-              onPress: () => {
-                console.log("Yes");
-              },
-            },
-            {
-              text: "No",
-              onPress: () => {
-                console.log("No");
-              },
-            },
-          ])
+          Alert.prompt("My title", "my message", (text) => console.log(text))
         }
         color="orange"
       />
