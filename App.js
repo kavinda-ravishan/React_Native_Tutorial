@@ -18,7 +18,7 @@ export default function App() {
     <View style={styles.container}>
       <Button
         title="Click Me"
-        onPress={() => console.log("Pressed")}
+        onPress={() => alert("Button pressed")}
         color="orange"
       />
     </View>
