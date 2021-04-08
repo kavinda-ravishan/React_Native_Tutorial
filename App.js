@@ -1,30 +1,32 @@
 import { StatusBar } from "expo-status-bar";
 import React from "react";
-import { StyleSheet, Text, View, SafeAreaView } from "react-native";
+import { StyleSheet, Text, View, Image } from "react-native";
 
 //solve SafeAreaView apple top notch problem
+//<Image source={require("./assets/icon.png")} />
+//https://picsum.photos/id/237/200/300
 export default function App() {
-  const handlePress = () => console.log("text pressed !");
-
-  //numberOfLines={1} wrap text on one line ...
   return (
-    <SafeAreaView style={styles.container}>
-      <Text style={styles.text} numberOfLines={1} onPress={handlePress}>
-        Open up App.js to start working on your app, Really Really long text
-      </Text>
+    <View style={styles.container}>
+      <Text>Open up App.js to start working on your app!</Text>
+      <Image
+        blurRadius={11}
+        fadeDuration={2000}
+        source={{
+          width: 200,
+          height: 300,
+          uri: "https://picsum.photos/id/237/200/300",
+        }}
+      />
       <StatusBar style="auto" />
-    </SafeAreaView>
+    </View>
   );
 }
 
 const styles = StyleSheet.create({
-  text: {
-    color: "white",
-    fontWeight: "bold",
-  },
   container: {
     flex: 1,
-    backgroundColor: "black",
+    backgroundColor: "#fff",
     alignItems: "center",
     justifyContent: "center",
   },
