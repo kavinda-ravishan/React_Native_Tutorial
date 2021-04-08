@@ -10,15 +10,16 @@ export default function App() {
         flexDirection: "row", //main axis is horizontal
         justifyContent: "center", //align item in main axis
         alignItems: "center", //align item in secondary axis (or each line)
-        alignContent: "center", //align center in container not in line (only with wraping)
-        flexWrap: "wrap", //prevent items shrinking
       }}
     >
       <View
         style={{
           backgroundColor: "blue",
-          width: 100,
-          height: 200,
+          //flexBasis: 100, //equalant to width: 100 in main axis horizontal
+          //flexGrow: 1, //equalant to flex:1
+          width: 400,
+          flexShrink: 1, //if overflow shrink this item (equlent to flex:-1)
+          height: 100,
         }}
       />
       <View
@@ -31,20 +32,6 @@ export default function App() {
       <View
         style={{
           backgroundColor: "gold",
-          width: 100,
-          height: 100,
-        }}
-      />
-      <View
-        style={{
-          backgroundColor: "gray",
-          width: 100,
-          height: 100,
-        }}
-      />
-      <View
-        style={{
-          backgroundColor: "black",
           width: 100,
           height: 100,
         }}
