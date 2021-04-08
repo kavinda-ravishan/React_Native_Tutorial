@@ -1,16 +1,16 @@
 import React from "react";
-import {
-  StyleSheet,
-  Button,
-  SafeAreaView,
-  Platform,
-  StatusBar,
-} from "react-native";
+import { StyleSheet, SafeAreaView, View, Dimensions } from "react-native";
+
+//width: 150 Dip
 
 export default function App() {
+  console.log(Dimensions.get("screen"));
+
   return (
     <SafeAreaView style={styles.container}>
-      <Button title="Click Me" />
+      <View
+        style={{ backgroundColor: "dodgerblue", width: "50%", height: "50%" }}
+      ></View>
     </SafeAreaView>
   );
 }
@@ -19,6 +19,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "#fff",
-    paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,
+    justifyContent: "center",
+    alignItems: "center",
   },
 });
