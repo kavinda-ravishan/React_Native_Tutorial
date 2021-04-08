@@ -7,6 +7,7 @@ import {
   Image,
   TouchableNativeFeedback,
   Button,
+  Alert,
 } from "react-native";
 
 //solve SafeAreaView apple top notch problem
@@ -18,7 +19,22 @@ export default function App() {
     <View style={styles.container}>
       <Button
         title="Click Me"
-        onPress={() => alert("Button pressed")}
+        onPress={() =>
+          Alert.alert("My title", "My message", [
+            {
+              text: "Yes",
+              onPress: () => {
+                console.log("Yes");
+              },
+            },
+            {
+              text: "No",
+              onPress: () => {
+                console.log("No");
+              },
+            },
+          ])
+        }
         color="orange"
       />
     </View>
