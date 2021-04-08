@@ -18,14 +18,15 @@ export default function App() {
         flex: 1,
         flexDirection: "row", //main axis is horizontal
         justifyContent: "center", //align item in main axis
-        alignItems: "stretch", //align item in secondary axis
+        alignItems: "center", //align item in secondary axis
       }}
     >
       <View
         style={{
           backgroundColor: "blue",
           width: 100,
-          //height: 300,
+          height: 300,
+          alignSelf: "flex-start",
         }}
       />
       <View
@@ -40,6 +41,7 @@ export default function App() {
           backgroundColor: "gold",
           width: 100,
           height: 100,
+          alignSelf: "flex-end",
         }}
       />
     </View>
