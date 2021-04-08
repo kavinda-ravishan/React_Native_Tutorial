@@ -15,11 +15,13 @@ export default function App() {
       <View
         style={{
           backgroundColor: "blue",
-          //flexBasis: 100, //equalant to width: 100 in main axis horizontal
-          //flexGrow: 1, //equalant to flex:1
-          width: 400,
-          flexShrink: 1, //if overflow shrink this item (equlent to flex:-1)
+          width: 100,
           height: 100,
+          top: 0,
+          left: 0,
+          //position: "relative", //default
+          position: "absolute", //position relative to perant
+          //green and yellow repositon
         }}
       />
       <View
@@ -27,6 +29,7 @@ export default function App() {
           backgroundColor: "green",
           width: 100,
           height: 100,
+          //top: 20, //20 dip from top (-20 to top equlant to bottom:20)
         }}
       />
       <View
@@ -34,6 +37,7 @@ export default function App() {
           backgroundColor: "gold",
           width: 100,
           height: 100,
+          //left: 20,
         }}
       />
     </View>
