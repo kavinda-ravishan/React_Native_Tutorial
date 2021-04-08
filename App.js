@@ -1,15 +1,6 @@
 import React from "react";
 import { View } from "react-native";
 
-//flex:1 take all space
-//flex:0.5 take half of space
-//flex default direction is column (can change by flexDirection: "row")
-//flexDirection: "row-reverse" items right to left
-//flexDirection: "column-reverse" items bottom to top
-
-//justifyContent: "center" align item in primery axis (flexDirection: "row" therefor primary axis (---))
-//justifyContent: "flex-start", default value
-//justifyContent: "space-evenly"
 export default function App() {
   return (
     <View
@@ -18,22 +9,23 @@ export default function App() {
         flex: 1,
         flexDirection: "row", //main axis is horizontal
         justifyContent: "center", //align item in main axis
-        alignItems: "center", //align item in secondary axis
+        alignItems: "center", //align item in secondary axis (or each line)
+        alignContent: "center", //align center in container not in line (only with wraping)
+        flexWrap: "wrap", //prevent items shrinking
       }}
     >
       <View
         style={{
           backgroundColor: "blue",
           width: 100,
-          height: 300,
-          alignSelf: "flex-start",
+          height: 200,
         }}
       />
       <View
         style={{
           backgroundColor: "green",
           width: 100,
-          height: 200,
+          height: 100,
         }}
       />
       <View
@@ -41,7 +33,20 @@ export default function App() {
           backgroundColor: "gold",
           width: 100,
           height: 100,
-          alignSelf: "flex-end",
+        }}
+      />
+      <View
+        style={{
+          backgroundColor: "gray",
+          width: 100,
+          height: 100,
+        }}
+      />
+      <View
+        style={{
+          backgroundColor: "black",
+          width: 100,
+          height: 100,
         }}
       />
     </View>
